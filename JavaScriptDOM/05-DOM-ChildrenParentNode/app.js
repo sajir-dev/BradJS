@@ -9,8 +9,8 @@ val = listItem;
 //Get child nodes
 val = list.childNodes;
 val = list.childNodes[0];
-val = list.childNodes[0].nodeType;
 val = list.childNodes[1].nodeName;
+val = list.childNodes[0].nodeType;
 
 // 1- Element
 // 2- Attribute (deprecated)
