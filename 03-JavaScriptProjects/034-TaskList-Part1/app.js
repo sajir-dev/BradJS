@@ -12,7 +12,7 @@ loadEventListeners();
 
 function loadEventListeners(){
     //Add task event
-    form.addEventListener('submit', addTask);    
+    form.addEventListener('submit', addTask);   
 }
 
 //Add task
