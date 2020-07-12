@@ -1,0 +1,113 @@
+* {
+    font-family: Helvetica;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    margin: 0;
+}
+
+.black-container {
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    width: 100%;
+}
+
+.navbar {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem auto;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    padding-inline-start: 0;
+}
+
+.navbar li a {
+    margin:0 1em;
+    text-decoration: none;
+    color: white;
+}
+
+.logo {
+    margin: 2em auto;
+    display: flex;
+    background-image: url(img/logo.png);
+    background-repeat: no-repeat;
+    background-size: 12rem;
+    height: 20vh;
+    color: transparent;
+    background-position: center;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.search-box input {
+    width: 300px;
+
+}
+
+.search-box > * {
+    margin: 0;
+    background-color: white;
+    border: none;
+    padding: 15px;
+}
+
+.search-box button {
+    background-color: #757575 ;
+}
+
+.find {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.search-box i {
+    background-color: red;
+    display: flex;
+    align-self: center;
+    height: 90%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.services ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline-start: 0;
+}
+
+.servies ul li {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.message {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin:0 auto;
+    padding: 10px;
+    width: 60%;
+    font-weight: 500;
+}
+
+.learn-more {
+    text-align: center;
+    margin-bottom: 2em;
+}
