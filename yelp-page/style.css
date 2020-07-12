@@ -4,8 +4,10 @@
 }
 
 body {
-    display: flex;
     margin: 0;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
 }
 
 .black-container {
@@ -110,4 +112,246 @@ body {
 .learn-more {
     text-align: center;
     margin-bottom: 2em;
+    text-decoration: underline;
+}
+
+.best-in-town {
+    text-align: center;
+}
+
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    background-color: #f9f9f9;
+    margin: 0 auto;
+}
+
+.cards-wrapper div {
+    width: 22%;
+    background-color: white;
+    margin: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px #fff;
+}
+
+.heading {
+    color: #d32323;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.cards-wrapper img {
+    width: 100%;
+}
+
+.cards-wrapper h3 {
+    margin: 0;
+    padding: 10px;
+    color: #444;
+    font-size:.8em
+}
+
+.yelp-ca {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.towns-tab {
+    width: 100%;
+    border-bottom: 1px solid #999;
+}
+
+.yelp-ca ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    padding-inline-start: 0;
+}
+
+.yelp-ca li {
+    margin: 10px;
+    font-size: .9rem;
+    font-weight: 400;
+}
+
+.icon-and-text {
+    display: flex;
+    align-items: center;
+}
+
+.hot-businesses {
+    display: flex;
+}
+
+.hot-business-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hot-business {
+    width: 32%;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #999;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    justify-content: flex-end;
+}
+
+.hot-business .shop-info {
+    margin-top: 10rem;
+    background-color: white;
+    padding: 10px;
+}
+
+.shop-info>* {
+    margin: 0;
+    padding: 0;
+}
+
+.rating i {
+    padding: 0;
+    margin: 0;
+    width: 25px;
+    color: white;
+    background-color: red;
+}
+
+.shop-info span {
+    font-size: .75em;
+    padding-left: 10px;
+    display: inline;
+    
+}
+
+.hot-business.one {
+    background-image: url("https://s3-media0.fl.yelpcdn.com/bphoto/PXOSOU3RbN1rruoxR-nncA/l.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hot-business.two {
+    background-image: url("https://s3-media0.fl.yelpcdn.com/bphoto/BLmr7SiNBQJtyVhZctNL0A/l.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hot-business.three {
+    background-image: url("https://s3-media0.fl.yelpcdn.com/bphoto/WSxdM7YOPQD-vAaTpDKydg/l.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.see-more {
+    text-align: center;
+    font-size: 1.125rem;
+    color: #0d749c;
+}
+
+.local-event-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    max-width: 1200px;
+    margin:0 auto;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.local-yelp {
+    grid-column: 1/3;
+}
+
+.local-yelp-img {
+    /* width: 100%; */
+    height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("https://s3-media0.fl.yelpcdn.com/wphoto/jnxbrELbLBB6IxzqAZIUPw/h.jpg");
+}
+
+.yelp-event {
+    grid-column: 3/4;
+}
+
+.yelp-event-img {
+    /* width: 100%; */
+    height: 250px;
+    background-image: url("https://s3-media0.fl.yelpcdn.com/ephoto/Az-UAbr1CE_4tKlnmp4a8g/300s.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+h5 {
+    color: #0d749c;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.local-event-wrapper p {
+    margin-top: 0;
+}
+
+.review-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    max-width: 1200px;
+    margin:0 auto;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.card {
+    border:solid 1px #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 3px #fff;
+    width: 100%;
+}
+
+.review-details {
+    grid-column: 1/3;
+}
+
+.user-dp {
+    height: 60px;
+    width: 60px;
+    border-radius: 5px;
+    background-color: #333;
+}
+
+.reviewer {
+    display: flex;
+}
+
+.info > * {
+    margin: 0;
+    padding: 1px;
+    margin-left: 10px;
+    font-size: .8rem;
+}
+
+.review-of-the-day-band {
+    margin:15px 0;
+    background-color: #0d749c;
+    padding: 3px;
+    border-radius: 3px;
+    color: white;
+}
+
+.recent-collections {
+    grid-column: 3/4;
+}
+
+.user-summary {
+    display: flex;
 }
