@@ -8,6 +8,7 @@ body {
     display: flex;
     margin: 0 auto;
     flex-direction: column;
+    /* flex-flow: column; */
 }
 
 .black-container {
@@ -358,6 +359,11 @@ h5 {
 
 .user-summary {
     display: flex;
+    margin-top: 15px;
+}
+
+.user-summary div {
+    margin: 3px;
 }
 
 .column-wrapper {
@@ -371,7 +377,7 @@ h5 {
 
 .column {
     width: 32%;
-    height: 200px;
+    /* height: 200px; */
     background-color: #fff;
     box-shadow: 0 2px 3px #fff;
     margin: 5px;
@@ -413,4 +419,68 @@ h5 {
 
 .column .card {
     margin-top: 20px;
+}
+
+.category-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #f4f4f4;
+    margin: 0 auto;
+}
+
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    justify-content: center;
+}
+
+.category div {
+    width: 20%;
+    text-align: center;
+    background-color: #fff;
+    margin: 10px;
+}
+
+.apps-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.apps {
+    display: flex;
+    justify-content: center;
+}
+
+.apps div {
+    width: 48%;
+    padding: 1%;
+    margin: 10px;
+    flex-grow: 1;
+}
+
+footer {
+    background-color: #f4f4f4;
+    max-width: 1200px;
+    min-width: 768px;
+    align-self: center;
+    text-align: center;
+}
+
+footer div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    font-size: .8em;
+    text-align: left;
+    width: 24%;
+    padding-left: 1%;
+}
+
+footer ul .heading {
+    text-align: left;
 }
