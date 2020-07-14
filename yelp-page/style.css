@@ -90,6 +90,10 @@ body {
     border-bottom-right-radius: 5px;
 }
 
+.mobile-service-wrapper {
+    display: none;
+}
+
 .services ul {
     list-style-type: none;
     display: flex;
@@ -489,7 +493,21 @@ footer ul .heading {
     text-align: left;
 }
 
+.mobile {
+    display: none;
+}
+
+
+.block-btn {
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
+
+    .mobile {
+        display: block;
+    }
+
     .navbar {
         display: none;
     }
@@ -511,6 +529,7 @@ footer ul .heading {
         align-items: center;
         padding: 5px;
     }
+
 
     .app-prompt {
         background-color: #851818;
@@ -555,6 +574,10 @@ footer ul .heading {
         padding: 10px;
     }
 
+    .mobile-service-wrapper {
+        display: block;
+    }
+
     .mobile-heading {
         margin: 15px;
     }
@@ -567,6 +590,68 @@ footer ul .heading {
 
     .service-mobile div{
         margin-right: 15px;
+    }
+
+    .block-btn {
+        display: block;
+        width: 92.5%;
+        margin: 10px 15px;
+        padding: 15px;
+        background-color: #1c8fb3;
+        border: none;
+        color: white;
+        font-weight: 600;
+        border-radius: 5px;
+    }
+
+    .user-summary {
+        margin: 10px;
+        color: #1c8fb3;
+    }
+
+    .user-summary div {
+        font-size: .9em;
+        align-self: center;
+    }
+    .user-summary h5 {
+        margin: 0;
+    }
+
+    .user-dp {
+        width: 75px;
+        height: 75px;
+    }
+
+    .block-btn .view-more {
+        background-color: #999 !important;
+        color: black;
+    }
+
+    .footer-mobile ul {
+        list-style-type: none;
+        text-align: center;
+        padding-inline-start:0;
+    }
+
+    .footer-head {
+        color: #0d749c;
+        margin-top: 5px;
+    }
+
+    .footer-mobile li {
+        padding: 5px;
+    }
+
+    .footer-mobile span {
+        margin: 0 4px;
+        color: #0d749c;
+        font-size: .8em;
+    }
+
+    .copyright-mobile {
+        margin-top: 1em;
+        font-size: .9em;
+        color: #777;
     }
 
 }
