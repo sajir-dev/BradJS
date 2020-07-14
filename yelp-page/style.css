@@ -25,6 +25,10 @@ body {
     margin: 2rem auto;
 }
 
+.mobile-nav {
+    display: none;
+}
+
 .navbar ul {
     list-style-type: none;
     display: flex;
@@ -483,4 +487,86 @@ footer ul {
 
 footer ul .heading {
     text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+    .mobile-nav {
+        display: block;
+        background-color: #d32323;
+        width: 100%;
+    }
+
+    .mobile-nav nav {
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile-nav div {
+        height: 100%;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .app-prompt {
+        background-color: #851818;
+        padding: 5px;
+        border-radius: 3px;
+        font-size: .75em;
+        margin: 0 10px;
+    }
+
+    .mobile-nav i {
+        margin: 0 10px;
+    }
+
+    .logo, .search-box, .message, .services, 
+    .learn-more, .recent-activity-wrapper, 
+    .review-wrapper, .yelp-ca, .local-event-wrapper, 
+    .best-in-town, .apps-wrapper, .desktop-footer-lists, .heading, .copyright-desktop {
+        display: none;
+    }
+
+    .category {
+        /* margin: 5px auto; */
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .category h4 {
+        font-size: .75em;
+        font-weight: 400;
+    }
+
+    .category div{
+        margin: 0;
+        padding: 5px;
+        width: 23%;
+        border-radius: 3px;
+        
+    }
+
+    .category div img {
+        width: 75%;
+        padding: 10px;
+    }
+
+    .mobile-heading {
+        margin: 15px;
+    }
+
+    .service-mobile {
+        margin: 15px;
+        display: flex;
+        background-color: #fff;
+    }
+
+    .service-mobile div{
+        margin-right: 15px;
+    }
+
 }
