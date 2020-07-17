@@ -65,7 +65,7 @@ body {
 
 }
 
-.search-box > * {
+.search-box > *{
     margin: 0;
     background-color: white;
     border: none;
@@ -90,6 +90,11 @@ body {
     border-bottom-right-radius: 5px;
 }
 
+.search-box .material-icons {
+    font-size: 28px;
+    padding: 9.5px;
+}
+
 .mobile-service-wrapper {
     display: none;
 }
@@ -102,10 +107,15 @@ body {
     padding-inline-start: 0;
 }
 
-.servies ul li {
+.services li {
     align-items: center;
     display: flex;
-    justify-content: center;
+    margin-right: 20px;
+}
+
+.services .material-icons {
+    font-size: 18px;
+    margin-right: 5px;
 }
 
 .message {
@@ -196,6 +206,7 @@ body {
 .hot-business-wrapper {
     display: flex;
     justify-content: space-between;
+    /* width: 32% !important; */
 }
 
 .hot-business {
@@ -216,6 +227,10 @@ body {
     margin-top: 10rem;
     background-color: white;
     padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: left;
+    width: 100%;
 }
 
 .shop-info>* {
@@ -223,12 +238,20 @@ body {
     padding: 0;
 }
 
-.rating i {
+.reddish i{
     padding: 0;
     margin: 0;
     width: 25px;
     color: white;
     background-color: red;
+}
+
+.yellowish i{
+    padding: 0;
+    margin: 0;
+    width: 25px;
+    color: white;
+    background-color: orange;
 }
 
 .shop-info span {
