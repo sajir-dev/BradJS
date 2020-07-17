@@ -1,0 +1,104 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ledger&display=swap');
+
+* {
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Ledger', Arial, Helvetica, sans-serif;
+    font-stretch: narrower;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+li {
+    margin: 0 8px;
+    align-self: baseline;
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.logo img{
+    filter: hue-rotate(180deg);
+}
+
+.more-info {
+    background-color: transparent;
+    padding: 1.5em 2em;
+    margin: 2em auto;
+    border: 2px solid white;
+    font-weight: 600;
+}
+
+.next-mission {
+    background-image: url('img/starlinkstreak_desktop.webp');
+    background-position: top;
+    background-size: cover;
+    width: 100%;
+    height: 90vh;
+}
+
+.section-wrapper {
+    max-width: 1400px;
+    width: 90%;
+    margin-top: 30px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+.mission-info {
+    margin-bottom: 4em;
+}
+
+.featured-mission  {
+    background-position: top;
+    background-size: cover;
+    width: 100%;
+    height: 90vh;
+}
+
+.second {
+    background-image: url('img/gps3_launch_desktop_02.webp');
+}
+
+.third {
+    background-image: url('img/home_demo2.webp');
+}
+
+.second-section h1{
+    margin: 5px auto;
+}
+
+.second-section {
+    margin-bottom: 3em;
+    text-align: left;
+    margin-left: auto;
+}
+
