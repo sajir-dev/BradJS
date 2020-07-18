@@ -102,3 +102,64 @@ nav ul{
     margin-left: auto;
 }
 
+.fourth {
+    background-color: black;
+    height: 100%;
+}
+
+.section-wrapper-row {
+    max-width: 1400px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    height: 100vh;
+    justify-content: center;
+}
+
+.video-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.text-wrapper {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+
+.text-wrapper button {
+    margin-left: 0;
+}
+
+video {
+    height: 80%;
+    width: 100%;
+    text-align: center;
+    align-self: center;
+}
+
+.fifth {
+    background-image: url('img/home_moon.webp');
+    height: 90vh;
+    background-position: top;
+    background-size: cover;
+}
+
+.fifth div {
+    flex: 1 1 0;
+    align-items: center;
+}
+
+footer {
+    background-color: black;
+}
+
+footer ul {
+    display: flex;
+}
+
+
