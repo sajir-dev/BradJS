@@ -30,6 +30,10 @@ li {
     font-weight: 600;
 }
 
+.mobile-logo {
+    display: none;
+}
+
 .logo img{
     filter: hue-rotate(180deg);
 }
@@ -144,9 +148,13 @@ video {
 
 .fifth {
     background-image: url('img/home_moon.webp');
-    height: 90vh;
+    /* height: 90vh; */
     background-position: top;
     background-size: cover;
+}
+
+.news-mobile-image {
+    display: none;
 }
 
 .fifth div {
@@ -160,6 +168,96 @@ footer {
 
 footer ul {
     display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: baseline;
+    height: 8vh;
+    flex-wrap: wrap;
+    padding-inline-start: 0;
 }
 
+footer li {
+    display: flex;
+    align-self: center;
+    font-size: .75rem;
+    margin: 0 20px;
+}
+
+/* Mobile Screen Optimization */
+@media screen and (max-width:960px) {
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: block;
+        align-self: center;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+
+    h5 {
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+
+    .more-info {
+        padding: 1em 2.5em;
+        margin: .75rem auto;
+    }
+
+    .section-wrapper-row {
+        display: flex;
+        flex-direction: column-reverse;
+        height: auto;
+    }
+
+    .video-wrapper {
+        width: 100%;
+    }
+
+    video {
+        height: 100%;
+        width: 90%;
+        margin-top: 5%;
+    }
+
+    .text-wrapper {
+        width: 90%;
+        margin-top: 5%;
+    }
+
+    .fifth {
+        background-image: none;
+        background-color: black;
+    }
+
+    .news-mobile-image {
+        display: block;
+    }
+
+    .news-mobile-image img{
+        width: 100%;
+    }
+
+
+    .fifth .section-wrapper-row{
+        margin: 5%;
+        flex-direction: column;
+    }
+
+    .news-text {
+        margin-top: 100px;
+    }
+
+}
 
