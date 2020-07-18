@@ -130,55 +130,65 @@
     <!-- START HERE -->
     <form>
       <!-- SWITCH -->
-      <div>
-
+      <div class="switch">
+        <label>
+          DISABLE
+          <input type="checkbox" checked>
+          <span class="lever"></span>
+          ENABLE
+        </label>
       </div>
 
       <!-- DISABLED SWITCH -->
-      <div>
-
+      <div class="switch">
+        <label>
+          DISABLE
+          <input type="checkbox">
+          <span class="lever"></span>
+          ENABLE
+        </label>
       </div>
 
       <br>
       <br>
 
       <!-- FILE INPUT -->
-      <div>
-        <div>
+      <div class="file-field input-field">
+        <div class="btn">
           <span>Upload File</span>
           <input type="file">
         </div>
-        <div>
-          <input type="text">
+        <div class="file-path-wrapper">
+          <input type="text" class="file-path">
         </div>
       </div>
 
       <!-- RANGE SLIDER -->
-      <p>
-        <input type="range">
+      <p class="range-field">
+        <input type="range" min="0" max="100">
       </p>
 
       <!-- DATE PICKER -->
-      <div>
-        <input type="text" id="date">
+      <div class="input-field">
+        <input type="text" id="date" class="datepicker">
         <label for="date">Choose a Date</label>
       </div>
 
       <!-- TIME PICKER -->
-      <div>
-        <input type="text" id="time">
+      <div class="input-field">
+        <input type="text" id="time" class="timepicker">
         <label for="time">Choose a Time</label>
       </div>
 
       <!-- CHARACTER COUNTER -->
-      <div>
-        <input id="post" type="text">
+      <div class="input-field">
+        <input id="post" type="text" data-length='20'>
         <label for="post">Post</label>
       </div>
 
       <!-- AUTOCOMPLETE -->
-      <div>
-        <input type="text" id="fruit">
+      <div class="input-field">
+        <input type="text" id="fruit" class="autocomplete">
         <label for="fruit">Type a Fruit</label>
       </div>
 
@@ -214,8 +224,33 @@
 
       // JAVASCRIPT START HERE //
 
+      // INIT DatePicker
+      $('.datepicker').pickadate({
+        selectMonths: true,
+        selectYear: 15,
+        closeOnSelect: true
+      });
 
+      // INIT TimePicker
+      $('.timepicker').pickatime({
+        default: 'now',
+        twelvehour: true,
+        donetext: 'ok',
+        cleartext: 'clear',
+        canceltext: 'cancel',
+        autoclose: true
+      });
 
+      // INIT Autocomplete
+      $('.autocomplete').autocomplete({
+        data: {
+          "Apple": null,
+          "Orange": null,
+          "Banana": null
+        },
+        limit: 20,
+        minLength: 2
+      });
 
     });
   </script>
