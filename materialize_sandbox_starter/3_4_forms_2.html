@@ -128,7 +128,7 @@
     <br>
 
     <!-- START HERE -->
-    <form>
+    <form action="#">
       <!-- SWITCH -->
       <div class="switch">
         <label>
@@ -231,6 +231,11 @@
         closeOnSelect: true
       });
 
+      $('.datepicker').on('mousedown', function(event){
+        event.preventDefault();
+      })
+
+
       // INIT TimePicker
       $('.timepicker').pickatime({
         default: 'now',
@@ -240,6 +245,10 @@
         canceltext: 'cancel',
         autoclose: true
       });
+
+      $('.timepicker').on('mousedown', function(event){
+        event.preventDefault();
+      })
 
       // INIT Autocomplete
       $('.autocomplete').autocomplete({
