@@ -1,5 +1,5 @@
 # Debugging Notes #
-### Problem: KPISoft Landing Page and website needed to have same styling for the forms <br>
+### Problem: KPISoft Landing Page and website to have same styling for the forms <br>
 #### Challenges:
 1. The landing page we scraped from Wordpress didnt have a form or its styling. <br>
 2. The custom css written did not work because the predefined HubSpot-CMS styling was overwriting the custom css - all of them had '!IMPORTANT' keyword on the css.<br>
