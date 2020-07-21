@@ -125,13 +125,13 @@
     <!-- START HERE -->
 
     <!-- TOAST BUTTON -->
-    <a class="btn">Show Toast</a>
+    <a id="toast1" class="btn">Show Toast</a>
 
     <!-- ROUNDED TOAST -->
-    <a class="btn">Rounded Toast</a>
+    <a id="toast2" class="btn">Rounded Toast</a>
 
     <!-- CALLBACK ON DISMISS -->
-    <a class="btn">Toast With Callback</a>
+    <a id="toast3" class="btn">Toast With Callback</a>
 
     <br>
     <br>
@@ -166,8 +166,22 @@
 
       // JAVASCRIPT START HERE //
 
+      // RUN TOAST
+      $('#toast1').click(function() {
+        Materialize.toast('I\'m a toast', 3000); 
+      });
 
+      // ROUNDED TOAST
+      $('#toast2').click(function(){
+        Materialize.toast('I\'m a toast', 3000, 'rounded', '')
+      });
 
+      // Toast with a callback
+      $('#toast3').click(function(){
+        Materialize.toast('I\'m toast', 3000, '' , function () {
+          alert('Toast Dismissed');
+        });
+      })
 
     });
   </script>
