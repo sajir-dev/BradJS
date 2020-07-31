@@ -53,3 +53,8 @@ down<br>
 12. 
 14. Whenever
 15. avoided
+
+
+### points to remember ###
+Global variable is shadowed by local variable inside a function <br>
+check how let and const works in the above case<br>
