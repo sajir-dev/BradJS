@@ -32,3 +32,24 @@ Another phrase for invoking a function: function call <br>
 Example of a function attached to an object: Math.random() <br>
 alert and prompt are library functions<br>
 What functions are great for: for code modularity<br>
+
+### JavaScript Cross ##
+4. variable
+6. Parameters
+10. anywhere
+11. undefined
+13. 
+16. global
+17. 
+
+down<br>
+1. scope
+2. reuse
+3. parameters
+5. return
+7. arguments
+8. variables
+9. 
+12. 
+14. Whenever
+15. avoided
