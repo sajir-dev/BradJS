@@ -26,3 +26,13 @@ We can create and add DOM elements by createElement, innerHTML appendChild, etc.
 We can remove elements from DOM using Remove element <br>
 We can traverse the DOM element using getParentElement, getSibling etc.. <br>
 
+<hr>
+5. eventhandlers
+7. 
+9. callback
+12. innerHTML
+14. document
+1. greenplanet
+2. console
+3. 
+
