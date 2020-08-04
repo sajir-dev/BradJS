@@ -48,4 +48,92 @@ if (testThis) {
     console.log("testThis is false inside conditional statement");
 }
 
+let stringTest = "          X    OxxOO    X   ";
+let hugs = 0;
+let kisses = 0;
+stringTest = stringTest.trim();
+stringTest = stringTest.toUpperCase();
 
+for (let i = 0; i<stringTest.length; i++) {
+    if (stringTest.charAt(i) === "X") {
+        hugs++;
+    } else if (stringTest.charAt(i) == "0") {
+        kisses++;
+    }
+}
+
+console.log ("stringTest:", stringTest, "hugs: ", hugs, "kisses: ", kisses);
+
+function validatePhoneNumber1 (phone) {
+    if (phone.length !== 8) {
+        return false;
+    }
+
+    for (let i = 0; i<phone.length; i++){
+        if (i === 3) {
+            if (phone.charAt(i) !== '-') {
+                return false;
+            }
+        } else if (isNaN(phone.charAt(i))) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+function validatePhoneNumber2 (phone) {
+    if ((phone.length !== 8) || (phone.charAt(3) !== '-' ) || 
+    (isNaN(phone.substring(0,3))) || (isNaN(phone.substring(4)))) {
+        console.log("here");
+        return false;
+    } 
+    
+    // if (phone.length !== 7 || isNaN(phone)) {
+    //     console.log("here");
+    //     return false;
+    // }
+
+    return true;
+}
+
+console.log(validatePhoneNumber1("123-4567"));
+console.log(validatePhoneNumber2("1234234"));
+
+// recheck
+function validatePhoneNumber3 (phone) {
+    return phone.match(/^\d{3}-\d{4}$/);
+}
+
+// recheck
+console.log(validatePhoneNumber2("123-4234"));
+
+// Validate phone number
+function validatePhoneNumber4 (phone) {
+    let phoneNo = phone.split("");
+
+    if (phoneNo.length>8 || phoneNo.length<7) {
+        return false
+    }
+
+    for (let i = 0; i<phoneNo.length; i++) {
+        if (isNaN(phoneNo[i])) {
+            return false;
+        }
+    }
+}
+
+function Duck (sound) {
+    this.sound =  sound;
+    this.quack = function () {
+        console.log(this.sound);
+    }
+}
+
+let toy = new Duck ("quack quack");
+
+toy.quack();
+
+console.log(typeof toy);
+console.log(toy instanceof Duck);
