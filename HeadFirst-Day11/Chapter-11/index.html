@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // function administer (patient, function (dosage) {
+        //     if (dosage > 0) {
+        //         inject(dosage);
+        //     }
+        // }, time);
+
+        // let count = 0;
+        // function counter () {
+        //     count++;
+        //     return count;
+        // }
+        // console.log(counter());
+
+        function myCounter() {
+            let count = 0;
+            function counter () {
+                count++;
+                return count;
+            }
+            return counter;
+        }
+
+        // const doCount = myCounter();
+        // console.log(doCount());
+        // console.log(doCount());
+
+        function makePassword(password) {
+            return function (passwordGuess) {
+                return (passwordGuess === password);
+            }
+        }
+
+        const tryGuess = makePassword("secret");
+        console.log(tryGuess("you-fool"));
+
+        function multN (n) {
+            return function (num) {
+                return n*num;
+            }
+        }
+
+        const multplier = multN(100);
+        const k = multplier(.1);
+        console.log(k)
+
+        
+        function makeCounter () {
+            let i = 1;
+            return function () {
+                // i++;
+                return i++; 
+            }
+        }
+        
+        const counter = makeCounter ();
+        console.log(counter());
+        console.log(counter());
+
+        function makeAlert(message, n) {
+            return setTimeout( function () {
+                alert (message);
+            }, n);
+        }
+
+        // const alertMaker = makeAlert("Sample Alert", 1000);
+
+        // This function will give an error because this doneMessage is not declared
+        // function hanlder() {
+        //     alert (doneMessage);
+        // }
+
+        // function makeTimer(doneMessage, n) {
+        //     setTimeout(hanlder, n);
+        // }
+
+        // makeTimer("Cookies are done!", 1000);
+
+        // function showAnswer (eventObj) {
+        //     const image = eventObj.target;
+        //     image.src = eventObj.target.id + ".jpg";
+
+        //     reblur(image, time);
+        // }
+
+        // function reblur (image, time) {
+        //     setTimeout (function(){
+        //         image.src = image.id + "blur.jpg";
+        //     }, time)
+        // }
+
+        function setTimer(doneMessage, n) {
+            setTimeout(function(){
+                alert(doneMessage);
+            }, n);
+
+            doneMessage = "Test2";
+        }
+
+        setTimer ("Test1", 1000);
+
+    </script>
+</body>
+</html>

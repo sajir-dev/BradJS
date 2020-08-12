@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, button { margin: 10px; }
+        div { padding: 10px; }
+    </style>
+    <script>
+        // JavaScript 
+        
+        
+        // let count = 0;
+        // window.onload = function(){
+        //     const button = document.getElementById("clickme");
+        //     button.onclick = handleClick;
+        // }
+        // function handleClick() {
+        //     const div = document.getElementById("message");
+        //     let message = "You clicked me ";
+        //     count++;
+        //     div.innerHTML = message + count + " times!";
+        // }
+
+        window.onload = function () {
+            let count = 0;
+            const div = document.getElementById("message");
+            const button = document.getElementById("clickme");
+            
+            button.onclick = function (){
+                div.innerHTML = "You clicked me "+ ++count +" times";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <button id="clickme">Click me</button>
+    <div id="message"></div>
+</body>
+</html>
