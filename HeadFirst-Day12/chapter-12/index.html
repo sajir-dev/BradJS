@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // const duck = {
+        //     type: "redheaded",
+        //     canFly: true,
+        // }
+        
+        function Duck(type, canFly) {
+            this.type = type;
+            this.canFly = canFly;
+        }
+
+        // Object with its constructor
+        // function Dog (name, breed, weight) {
+        //     this.name = name;
+        //     this.breed = breed;
+        //     this.weight = weight;
+        //     this.bark = function() {
+        //         if (this.weight > 25) {
+        //             alert (this.name + " says Woof!");
+        //         } else {
+        //             alert (this.name + " says Yip");
+        //         }
+        //     };
+        // }
+        // Calling the constructor
+        // const fido = new Dog ("Fido", "Mixed", 38);
+        // const fluffy = new Dog ("Fluffy", "Foodle", 30);
+        // const spot = new Dog ("Spot", "Chihuaha", 10);
+
+        // const dogs = [fido, fluffy, spot];
+        // for (let i=0; i<dogs.length; i++) {
+        //     // if (dogs[i].weight>10) {
+        //     //     size = "large"
+        //     // }
+        //     // console.log("Dog", dogs[i].name, "is a",size, dogs[i].breed);
+        //     dogs[i].bark();
+        // }
+
+        function Coffee(roast, ounces) {
+            this.roast = roast;
+            this.ounces = ounces;
+            this.getSize = function() {
+                if (ounces === 16) {
+                    return "large";
+                } else if (ounces === 12){
+                    return "medium";
+                } else if (ounces === 8){
+                    return "small";
+                } else {
+                    return "custom size";
+                }
+            };
+            this.toString = function() {
+                return ("You've ordered a "+ this.getSize() + " " + this.roast +" coffee");
+            }
+        }
+
+        // const houseBlend = new Coffee("House Blend", 12);
+        // console.log(houseBlend.toString());
+        
+        // const darkRoast = new Coffee ("Dark Roast", 20);
+        // console.log(darkRoast.toString());
+
+        function Car (make, model, year, color, passengers, convertible, mileage) {
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.color = color;
+            this.passengers = passengers;
+            this.convertible = convertible;
+            this.mileage = mileage;
+            this.started = false;
+            this.start = function () {
+                this.started = true
+            };
+            this.drive = function () {
+                if (this.started) {
+                    console.log("Zoom Zoom");
+                } else {
+                    console.log ("You need to start the car first");
+                }
+            };
+            this.stop = function () {
+                this.started = false;
+            }
+        }
+
+        const chevy = new Car("Chevy", "Bel Air", 1957, "red", 2, false, 1021);
+
+        const cadi = new Car("GM", "Cadillac", 1955, "tan", 5, false, 12892);
+
+        const taxi = new Car("Webville Motors", "Taxi", 1955, "yellow", 4, false, 281341);
+
+        const fiat = new Car("Fiat", "500", 1957, "Medium Blue", 2, false, 88000);
+
+        const testCar = new Car("Webville Motors", "Test car", 2014, "marine", 2, true, 21);
+
+        const cars = [chevy, cadi, taxi, fiat, testCar];
+
+        // for (let i=0; i<cars.length; i++){
+        //     cars[i].start();
+        //     cars[i].drive();
+        //     cars[i].drive();
+        //     cars[i].stop();
+        // }
+
+
+        //Rewiring object literals with constructors
+        const carCadiParams = {
+            make: "GM",
+            model: "Cadillac",
+            year: 1955,
+            color: "tan",
+            passengers: 5,
+            convertible: false,
+            mileage: 12892
+        };
+
+        function CarNew(params) {
+            this.make = params.make;
+            this.model = params.model;
+            this.year = params.year;
+            this.color = params.color;
+            this.passengers = params.passengers;
+            this.convertible = params.convertible;
+            this.mileage = params.mileage;
+            this.started = false;
+            
+            this.start = function(){
+                this.started = true;
+            }
+            this.stop = function() {
+                this.started = false;
+            }
+            this.drive = function() {
+                if (this.started) {
+                    alert ("Zoom Zomm");
+                } else {
+                    alert ("You need to start the engine first");
+                }
+            }
+        }
+
+        const cardiCar = new CarNew(carCadiParams);
+
+        // cardiCar.start();
+        // cardiCar.drive();
+
+        // console.log(typeof cardiCar);
+        // console.log(typeof cars)
+        // if (typeof cardiCar === typeof cars){
+        //     console.log("equal");
+        // }
+
+        function dogCatcher(obj) {
+            if (obj instanceof Dog) {
+                return true;
+            } else {
+                return false
+            }
+        }
+
+        function Cat (name, breed, weight) {
+            this.name = name;
+            this.breed = breed;
+            this.weight = weight;
+        }
+
+        const meow = new Cat ("Meow", "Siamese", 10);
+        const whiskers = new Cat ("Whiskers", "Mixed", 12);
+
+        const fido = {name: "Fido", breed: "Mixed", weight: 38};
+
+        function Dog(name, breed, weight) {
+            this.name = name;
+            this.breed = breed;
+            this.weight = weight;
+            this.bark = function() {
+                if (this.weight > 25) {
+                    console.log(this.name+ " says WOOF!");
+                } else {
+                    console.log(this.name+ " says Yip!");
+                }
+            }
+        }
+
+        const fluffy = new Dog ("Fluffy", "Poodle", 30);
+        const spot = new Dog ("Spot", "Chihuaha", 10);
+        const dogs = [meow, whiskers, fido, fluffy, spot];
+
+        // for (let i=0; i<dogs.length; i++){
+        //     // console.log( dogs[i] + dogs [i] instanceof Cat);
+        //     if (dogCatcher(dogs[i])){
+        //         console.log(dogs[i].name+ " is a dog");
+        //     }
+        // }
+
+        // Date obj using constructors
+        const now = new Date();
+
+        const dateStirng = now.toString();
+        const theYear = now.getFullYear();
+        const theDayOfWeek = now.getDay();
+
+        // Passing date string and creates date
+        const birthday = new Date("May 1, 1983");
+        // Passing time string as well
+        const anniversary = new Date("May 1, 1983 08:03 pm");
+
+        // Array obj using cinstrutor because Array is an object in JS
+        const emptyArray = new Array();
+
+        const oddNos = new Array(3);
+        oddNos[0] = 1;
+        oddNos[1] = 3;
+        oddNos[2] = 5;
+
+        oddNos.reverse();
+
+        const aString = oddNos.join("-");
+
+        const areAllOdd = oddNos.every (function(x) {
+            return ((x%2) !== 0);
+        });
+
+        // Array constructors helps to create array dynamically or programmatically
+        const n = getNumberOfWidgetsFromDatabase();
+        const widgets = new Array(n);
+        for (let i=0; i<n; i++){
+            widgets[i] = getDatabaseRecord(i);
+        }
+    </script>
+</body>
+</html>
