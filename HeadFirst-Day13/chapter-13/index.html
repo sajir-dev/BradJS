@@ -87,13 +87,13 @@
         const scotty = new ShowDog("Scotty", "Scottish", 15, "Cookie");
         const beatrice = new ShowDog("Beatrice", "Pomeranian", 5, "Hamilton");
 
-        fido.bark();
-        fluffy.bark();
-        spot.bark();
-        scotty.bark();
-        beatrice.bark();
-        scotty.gait("Walk");
-        beatrice.groom();
+        // fido.bark();
+        // fluffy.bark();
+        // spot.bark();
+        // scotty.bark();
+        // beatrice.bark();
+        // scotty.gait("Walk");
+        // beatrice.groom();
 
         // fido.bark();
         // fido.run();
@@ -112,6 +112,18 @@
             this.year = year;
             this.owner = owner;
         }
+
+        // overwriting toString- Page 608
+        Robot.prototype.toString = function() {
+            return this.name + "Robot belonging to " + this.owner;
+        }
+
+        const toy = new Robot("Toy", 2013, "Avary");        
+        // console.log(toy.toString());
+        // console.log("Robot is "+ toy); // Any string concatenation will automatically invoke toString function, here we have overwritten to string and that function is getting called
+        // DO not overwrite- constructor, hasOwnProperty, isPrototypeOf, propertyIsEnumerable
+        // overwriting toString- Page 608-End
+
         Robot.prototype.maker = "ObjectsRUs";
 
         Robot.prototype.speak = function (){
@@ -149,17 +161,17 @@
         SpaceRobot.prototype = new Robot();
         
         SpaceRobot.prototype.speak = function() {
-            alert(this.name + " says Sir, If I may venture an opinion..");
+            // alert(this.name + " says Sir, If I may venture an opinion..");
         };
 
         SpaceRobot.prototype.pilot = function() {
-            alert(this.name + " says Thrusters? Are they important");
+            // alert(this.name + " says Thrusters? Are they important");
         }
 
         const cp30 = new SpaceRobot("CP30", 1977, "Luke Skywalker", "Tatooine");
         cp30.speak();
         cp30.pilot();
-        console.log(cp30 + " was made by "+ cp30.maker);
+        // console.log(cp30 + " was made by "+ cp30.maker);
 
         // console.log(robby.name + " was invented by "+ robby.owner + " in "+
         // robby.year);
@@ -188,9 +200,9 @@
 
         const game = new Game();
 
-        while (game.level<42){
-            game.play();
-        }
+        // while (game.level<42){
+        //     game.play();
+        // }
 
         // robby.deployLaser();
         // rosie.deployLaser();
@@ -198,6 +210,51 @@
         // if we dont explicitly set the constructor for a derived class it will inherit it and it will lead to confusion. To avoid this,
         // showDog.prototype.constructor = showDog 
         // Now scotty.constructor will output showDog. Page No: 601 HFJS
+
+        // Extending builtin functions
+        String.prototype.cliche = function() {
+            const cliche = ["lock and load", "touch base", "open the kimono"];
+
+            for (let i=0; i<cliche.length; i++){
+                let index = this.indexOf(cliche[i]);
+                if (index >= 0) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        const words = ["I'll send my car around to pick you up.", 
+                "Let's touch base in the morning and see where we are", 
+                "We dont want to open the kimono, we just want to inform them"];
+        // for(let i=0; i<words.length; i++) {
+        //     if (words[i].cliche()) {          //Here we are calling a function on string which will automatically invoke the prototype fucntion we just wrote
+        //         console.log("CLICHE FOUND "+ words[i]);
+        //     }
+        // }
+
+        String.prototype.palindrome = function() {
+            console.log(this.valueOf());
+            let splitWord = this.split("");
+            console.log(splitWord);
+            let reverseArr = splitWord.reverse();
+            console.log(reverseArr);
+            let reverseWord = reverseArr.join("");
+            if (reverseWord === this.valueOf()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        const wd = "ABCDA";
+        // if (wd.palindrome()) {
+        //     console.log(wd + " is a palindrome");
+        // }
+
+        // console.log(wd.palindrome());
+
+
     </script>
 </body>
 </html>
