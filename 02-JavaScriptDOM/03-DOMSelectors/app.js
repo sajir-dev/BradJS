@@ -24,5 +24,3 @@ document.querySelector('li').style.color = 'red';
 document.querySelector('li:last-child').style.color = 'yellow';
 document.querySelector('li:nth-child(3)').innerText = 'Hello World';
 document.querySelector('li:nth-child(odd)').style.background = "#ccc";
-
-
