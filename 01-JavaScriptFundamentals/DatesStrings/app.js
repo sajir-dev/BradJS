@@ -22,6 +22,4 @@ birthday.setHours(3);
 birthday.setMinutes(30);
 birthday.setSeconds(25);
 
-
-
 console.log(birthday);
