@@ -19,4 +19,4 @@ const view = {
 
 view.displayMessage("Test Message");
 view.showBattleShip(35);
-view.showMiss(66)
+view.showMiss(66);
