@@ -9,14 +9,17 @@ const container = document.querySelector(".container");
 const dropDownItems = document.querySelectorAll(".dropdown-item");
 const dropdown = document.querySelectorAll(".dropdown");
 const dropDownArray = Array.from(dropDownItems);
+const carsDiv = document.querySelector(".cars");
 
-container.addEventListener("click", (e) => {
-    if (e.target.matches ("input") && (e.target.checked === true || e.target.checked === false)) {
-        const filtersObjArr = generateFilterDOM();
-        const projectToDisplay = parallelFilter(cars, filtersObjArr);
-        console.log(projectToDisplay);
-    }
-})
+function updateUI (carsArr) {
+    let displayCars = "";
+    carsArr.forEach(car => {
+        displayCars += `<p>Maker : ${car.type}<br>
+        Model : ${car.model}<br>
+        Color: ${car.color}</p>`;
+    });
+    carsDiv.innerHTML = displayCars;
+}
 
 function generateFilterDOM() {
     const filters = ["GM", "Suzuki", "Tata", "Fiat", "500", "600", "800", "white","black", "red"];
@@ -96,3 +99,20 @@ function intersection (a, b) {
     }
     return intersection;
 }
+
+container.addEventListener("click", (e) => {
+    if (e.target.matches ("input") && (e.target.checked === true || e.target.checked === false)) {
+        const filtersObjArr = generateFilterDOM();
+        const projectToDisplay = parallelFilter(cars, filtersObjArr);
+        updateUI(projectToDisplay);
+    }
+});
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    const filtersObjArr = generateFilterDOM();
+    const projectToDisplay = parallelFilter(cars, filtersObjArr);
+    console.log(projectToDisplay);
+    updateUI(projectToDisplay);
+});
+
