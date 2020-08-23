@@ -11,19 +11,12 @@ const dropdown = document.querySelectorAll(".dropdown");
 const dropDownArray = Array.from(dropDownItems);
 
 container.addEventListener("click", (e) => {
-    // console.log("clicked");
     if (e.target.matches ("input") && (e.target.checked === true || e.target.checked === false)) {
-        // console.log(e.target.parentElement);
-        // console.log(dropDownArray.indexOf(e.target.parentElement));
         const filtersObjArr = generateFilterDOM();
-        console.log(filtersObjArr);
-        console.log(parallelFilter(cars, filtersObjArr));
+        const projectToDisplay = parallelFilter(cars, filtersObjArr);
+        console.log(projectToDisplay);
     }
 })
-
-// const filtersObjArr = generateFilterDOM();
-// console.log(filtersObjArr);
-// console.log(typeof filtersObjArr[0][0]);
 
 function generateFilterDOM() {
     const filters = ["GM", "Suzuki", "Tata", "Fiat", "500", "600", "800", "white","black", "red"];
@@ -44,26 +37,6 @@ function generateFilterDOM() {
     return specificFilters;
 }
 
-// console.log(filters[dropDownArray.indexOf(checkedItem.parentElement)]);
-// console.log(dropDownItems)
-// console.log(dropdown[2].childNodes[3].children.length);
-// console.log(dropdown[2].childNodes[1].innerText)
-
-// function createFilter(checkedItem, filtersObjArr) {
-//     // console.log(dropDownArray.indexOf(checkedItem.parentElement));
-//     // console.log(dropDownArray);
-//     let filter = 
-//     for (let i = 0; i < dropDownArray.length; i++) {
-//         console.log(dropDownArray[i].firstElementChild.checked)
-//         if (dropDownArray[i].firstElementChild.checked) {
-
-//         }
-//     }
-// }
-
-
-// complete the logic of connecting the filtering parallely and series
-
 function parallelFilter (cars, filtersArr) {
     let filtered = [];
     for (let i = 0; i < filtersArr.length; i++) {
@@ -72,22 +45,20 @@ function parallelFilter (cars, filtersArr) {
             continue;
         } else {
             for (let j = 0; j < filtersArr[i].length; j++) {
-                let filteredOnce = singleFilter(filtersArr[i][j], cars);
-                if (!filtered[i].length === 0) {
-                    filtered[i] = filteredOnce;
+                let filteredBySingleFilter = singleFilter(filtersArr[i][j], cars);
+                if (!filtered[i]) {
+                    filtered[i]= filteredBySingleFilter;
                 } else {
-                    filtered[i].splice(filtered.length, filteredOnce.length, ...filteredOnce);
+                    filtered[i].splice(filtered[i].length, filteredBySingleFilter.length, ...filteredBySingleFilter);
                 }
             }
-            filtered[i] = removeDuplicate(filtered);
+            filtered[i] = removeDuplicate(filtered[i]);
         }
     }
 
-    // filtered = removeDuplicate(filtered);
-    // if (filtered.length === 0) {
-    //     return cars;
-    // }
-    return filtered;
+    let intersection1 = intersection(filtered[0], filtered[1]);
+    let result = intersection(intersection1, filtered[2]);
+    return result;
 }
 
 function singleFilter (filterObj, ItemsArr) {
@@ -112,6 +83,16 @@ function removeDuplicate (arr) {
     return arr;
 }
 
-// console.log(singleFilter({model:"600"}, cars ));
 
-
+function intersection (a, b) {
+    const arr = [...a, ...b]
+    let intersection = [];
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i].id === arr[j].id) {
+                intersection.push(arr[i])
+            }
+        }
+    }
+    return intersection;
+}
